@@ -5,35 +5,38 @@ import './style.css'
 
 function App() {
 
-  const [data, setData] = useState('')
-  const [num, setNum] = useState('')
-  const [number, setNumber] = useState('')
-  const [numbers, setNumbers] = useState('')
-  // const [sub, setSub] = useState([{ num: '', data: '', number: '', numbers: '' }])
+  // const [data, setData] = useState('')
+  // const [num, setNum] = useState('')
+  // const [number, setNumber] = useState('')
+  // const [numbers, setNumbers] = useState('')
+  const [sub, setSub] = useState([{ num: '', data: '', number: '', numbers: '' }])
+  const [sum, setSum] = useState([''])
 
-  // const submit = (e) => {
-  //   setSub({...sub, [e.target.name]:e.target.value})
-  // }
+  const change = (e) => {
+    // setData(e.target.value)
+    setSub({ ...sub, [e.target.name]: e.target.value })
+  }
 
-
+  const move = (e) => {
+    e.preventDefault()
+    const newdata = { ...sub, id: new Date().getTime().toString() }
+    setSum([...sum, newdata])
+  }
 
 
   return (
     <div className="App">
 
 
-      <form>
+      <form onSubmit={move} method="post">
         <label className="heading">Card Number</label>
         <div className="styling">
-          <input className="style" id="id1" type="tel" value={data} name="data" maxLength={4} autoFocus onChange={e => setData(e.target.value)} />
-
-          <input className="style" id="second" type="tel" value={num} name="num" maxLength={4} onChange={e => setNum(e.target.value)} />
-          <input className="style" id="id3" type="tel" value={number} name="number" maxLength={4} onChange={e => setNumber(e.target.value)} />
-          <input className="style" id="id4" type="tel" value={numbers} name="numbers" maxLength={4} onChange={e => setNumbers(e.target.value)} />
+          <input className="style" id="id1" type="tel"  value={sub.value} name="data" maxLength={4} autoFocus onChange={change} />
+          <input className="style" id="second" type="tel" value={sub.value} name="num" maxLength={4} onChange={change} />
+          <input className="style" id="id3" type="tel" value={sub.value} name="number" maxLength={4} onChange={change} />
+          <input className="style" id="id4" type="tel" value={sub.value} name="numbers" maxLength={4} onChange={change} />
         </div>
-        <button type="submit">submit</button>
-        {/* {sub} */}
-
+        <button  type="submit">submit</button>
 
       </form>
 
