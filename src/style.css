@@ -1,0 +1,21 @@
+.styling{
+    display: flex;
+    
+  
+  }
+  .heading{
+      color: black;
+      font-size: larger;
+  }
+  .style{
+    justify-content: space-evenly;
+    background-color: whitesmoke;
+    width: 4%;
+    height:23%;
+    margin-left: 3%;
+    margin-top: 2%;
+    
+  }
+  .style:hover{
+      opacity: 0.3;
+  }
