@@ -9,7 +9,7 @@ function App() {
   const [num, setNum] = useState('')
   const [number, setNumber] = useState('')
   const [numbers, setNumbers] = useState('')
-  const [sub, setSub] = useState([{ num: '', data: '', number: '', numbers: '' }])
+  // const [sub, setSub] = useState([{ num: '', data: '', number: '', numbers: '' }])
 
   // const submit = (e) => {
   //   setSub({...sub, [e.target.name]:e.target.value})
